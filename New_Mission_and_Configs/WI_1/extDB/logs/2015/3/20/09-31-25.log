@@ -1,0 +1,12 @@
+[20:31:25 +11:00] [Thread 2898413812] extDB: Version: 29
+[20:31:25 +11:00] [Thread 2898413812] extDB: Found extdb-conf.ini
+[20:31:25 +11:00] [Thread 2898413812] extDB: Creating Worker Thread +1
+[20:31:25 +11:00] [Thread 2898413812] extDB: Creating Worker Thread +1
+[20:31:25 +11:00] [Thread 2898413812] extDB: Creating Worker Thread +1
+[20:31:25 +11:00] [Thread 2898413812] extDB: Creating Worker Thread +1
+[20:31:25 +11:00] [Thread 2898413812] extDB: Creating Worker Thread +1
+[20:31:25 +11:00] [Thread 2898413812] extDB: Creating Worker Thread +1
+[20:31:25 +11:00] [Thread 2898413812] extDB: Creating Worker Thread +1
+[20:31:25 +11:00] [Thread 2898413812] extDB: Creating Worker Thread +1
+[20:31:25 +11:00] [Thread 2898413812] extDB: Database Type: MySQL
+[20:31:25 +11:00] [Thread 2898413812] extDB: Database Session Pool Started

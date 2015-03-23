@@ -1,0 +1,50 @@
+OC0 is the number of objects currently in the mission (vehicles, players, AI, crates, tents, bunny rabbits and so on...)
+OC1 is the number of vehicles in the mission.
+OC2 is the number of "mission created objects" (*).
+
+Alongside to the well known FPS (frames per second), an very interesting value, CPS, is introduced here.
+CPS is expressed by condition evalations per second and measured from an reference condition in fn_ASM.fsm.
+You can realize this CPS value as the reciprocal of the current "minimal response delay" of local AI in the running mission.
+
+
+- OC[0..2] three independent, customizable "counter" (.sqf based)  
+- PL# Number of alive player units
+- AIL Number of alive server local AI units
+- AIR Number of alive AI units on connected machines (remote)
+- FPS (on a server this means simulation cycles per second)
+- FPSmin (the minimum FPS of the last 16 cycles, hist. graph only)
+- CPS Condition-evaluation per Second (rel. to AI response delay, VM load)
+- MEM Amount of allocated physical memory
+- NTI Network Traffic Incoming [kByte/s]
+- NTO Network Traffic Outgoing [kByte/s]
+- DIR DIsk Read [kByte/s]
+- Name of the currently played mission (missionName)
+- Name of the instance profile (profileName)
+
+How to use ASM:
+
+Additional hint: to avoid @ASM listing in arma server browser, just install ASM.pbo in a3\addons folder.
+
+Extract this file: https://github.com/fred41/ASM/blob/master/addon/ASM.zip to your Arma 3 root folder.
+
+Add -mod=@ASM to your server (or HC) launch params.
+
+Run ArmaServerMonitor.exe from what directory you want, to monitor all your server (or HC) instances locally.
+
+Additional, it is possible to connect to Arma Server Monitor from remote via TCP.
+To watch your server from a remote device, you need an ASM instance on that device too and to configure it per start params as client.
+Default start params for ArmaServerMonitor.exe are: -server -n1 -h127.0.0.1 -p24000
+This means, ASM starts as monitoring server and listens at TCP port 24000, max. allowed remote clients = 1.
+
+Example for client configuration: ArmaServerMonitor.exe -client -h201.178.1.102 -p24000
+
+ASM starts as client and tries periodical to connect/read to/from your ASM server at 201.178.1.102:24000.
+If your server is firewall protected, you have to open the selected TCP port on server.
+
+You can activate the optional log feature, by adding -lfilenameprefix to your ASM start line.
+By adding a -tinterval you can select the log interval in seconds (default 1). Values are ordered like this:
+
+TimeStamp|FPS|CPS|PL#|AIL|AIR|OC0|OC1|OC2
+
+To support monitors of different width, there is a -wxxx command line parameter, to set the width of the history graph in pixels/seconds.
+This value should be set to a multiple of 60, or better of 300. Default is 900 pixels (-w900).

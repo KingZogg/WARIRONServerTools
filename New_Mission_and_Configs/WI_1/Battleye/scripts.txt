@@ -1,0 +1,5 @@
+// A3Wasteland - scripts.txt BattlEye filters by AgentRev
+5 "addWeaponTurret"
+//1 "BIS_fnc_AAN" // AAN news banner crap
+5 "ctrlCreate" // command used to build script menus
+1 "onMapSingleClick" !"\"onmapsingleclick\"" // log possible teleport hacks
